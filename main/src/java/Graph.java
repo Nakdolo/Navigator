@@ -1,11 +1,13 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 public class Graph {
-    String vertices;
-    int edge;
-    int arr[][];
+
     public Graph(int nodes) {
 
     }
-    public void addEdge(String vertices) {
+    public void addEdge(int u, int v) {
 
     }
 }
