@@ -2,16 +2,28 @@ package Instruments;
 
 public class List <T>{
     T [] list ;
-    private int size ;
-    List(){
-        list= (T [])new Object [2] ;
-        size = 2;
+    int ind = 0;
+    public int size(){
+        return ind;
     }
-    T get(int i){
-       return  list[i];
+    public List(){
+      list= (T[]) new Object[2];
     }
-    void add(T t){
-
+    public void add(T t){
+        if(ind == list.length){
+            copyAndExpand();
+        }
+        list[ind]=t;
+        ind++;
     }
-
+    void copyAndExpand(){
+       T [] old = list;
+       list=(T[])new Object[list.length*2];
+       for(int i = 0;i<ind;i++){
+           list[i]=old[i];
+       }
+    }
+    public T get(int i){
+        return list[i];
+    }
 }

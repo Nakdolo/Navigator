@@ -1,0 +1,61 @@
+1.Sdu_Dolan]2
+2.Dolan_Bahar,Sdu]3,2
+3.Bahar_Qumtogan,Dolan]1,3
+4.Qumtogan_19,Bahar]3,1
+5.19_Rayymbek turn,19]5,3
+6.Rayymbek turn_Asyl arman,19]2,5
+7.Asyl arman_Altyn Orda,Rayymbek turn]3,2
+8.Altyn Orda_Aport,Asyl arman]3,3
+9.Aport_Rayymbek Yassawi,Altyn Orda]4,3
+10.Rayymbek Yassawi_Tole bi Yassawi,Rayymbek Momyshuly,Aport]4,3,4
+11.Tole bi Yassawi_Tole bi Momyshuly,Rayymbek Yassawi]2,4
+12.Rayymbek Momyshuly_Tole bi Momyshuly,Rayymbek Saina,Rayymbek Yassawi]2,3,3
+13.Tole bi Momyshuly_Tole bi Saina,Momyshuly Abay,Tole bi Yassawi,Rayymbek Momyshuly]4,10,2,2
+14!.Momyshuly Abay_Shalyapin Momyshuly,Saina Abay,Tole bi Momyshuly]3,5,10
+15.Shalyapin Momyshuly_Saina Shalyapin,Momyshuly Abay]6,3
+16.Rayymbek Saina_Rayymbek Otegen batyr,Tole bi Saina,Rayymbek Momyshuly]7,8,3
+17.Tole bi Saina_Tole bi Otegen batyr,Tole bi Momyshuly,Saina Abay,Rayymbek Saina]8,4,11,8
+18!.Saina Abay_Momyshuly Abay,Saina Shalyapin,Otegen batyr Abay]5,3,6
+19.Saina Shalyapin_Shalyapin Momyshuly,Shalyapin Satbaev,Saina Abay]6,7,3
+20.Rayymbek Otegen batyr_Rayymbek Brusilovsky,Tole bi Otegen batyr,Rayymbek Saina]10,3,7
+21.Tole bi Otegen batyr_Tole bi Brusilovsky,Tole bi Saina,Otegen batyr Abay,Rayymbek Otegen batyr]6,8,7,3
+22!.Otegen batyr Abay_Abay Brusilovsky,Saina Abay,Tole bi Otegen batyr]4,6,7
+23.Shalyapin Satbaev_Saina Shalyapin,Brusilovsky Satbaev]7,4
+24.Rayymbek Brusilovsky_Rayymbek Rozybakieva,Tole bi Brusilovsky,Rayymbek Otegen batyr]4,5,10
+25.Tole bi Brusilovsky_Tole bi Otegen batyr,Tole bi Rozybakieva,Abay Brusilovsky,Rayymbek Brusilovsky]6,5,7,5
+26!.Abay Brusilovsky_Otegen batyr Abay,Abay Rozybakieva,Tole bi Brusilovsky,Brusilovsky Satbaev]4,5,7,2
+27.Brusilovsky Satbaev_Shalyapin Satbaev,Rozybakieva Satbaev,Abay Brusilovsky]7,3,2
+28.Rayymbek Rozybakieva_Rayymbek Seifulina,Tole bi Rozybakieva,Rayymbek Brusilovsky]20,4,4
+29.Tole bi Rozybakieva_Tole bi Brusilovsky,Seifulina Tole bi,Abay Rozybakieva,Rayymbek Rozybakieva]5,21,7,4
+30.Abay Rozybakieva_Abay Brusilovsky,Rozybakieva Satbaev,Seifulina Abay,Tole bi Rozybakieva]5,2,19,7
+31.Rozybakieva Satbaev_Brusilovsky Satbaev,Abay Rozybakieva]3,2
+32.Rayymbek Seifulina_Seifulina Makataeva,Rayymbek Zheltoksan,Rayymbek Rozybakieva]4,3,20
+33.Seifulina Makataeva_Seifulina Gogolya,Makataeva Zheltoksan,Rayymbek Seifulina]2,3,4
+34.Seifulina Gogolya_Seifulina Tole bi,Gogolya Zheltoksan,Seifulina Makataeva]4,3,2
+35.Seifulina Tole bi_Seifulina Kurmangazy,Seifulina Zheltokas,Seifulina Gogolya,Tole bi Rozybakieva]4,3,4,21
+36.Seifulina Kurmangazy_Seifulina Abay,Kurmangazy Sheltoksan,Seifulina Tole bi]1,3,4
+37!.Seifulina Abay_Abay Zheltoksan,Seifulina Kurmangazy,Abay Rozybakieva]3,1,19
+38.Zheltoksan Rayymbek_Abylay khan Rayymbek,Zheltoksan Makataeva,Seifulina Rayymbek]1,4,7
+39.Zheltoksan Makataeva_Abylay khan Makataeva,Zheltoksan Gogolya,Seifulina Makataeva,Zheltoksan Rayymbek]1,3,3,4
+40.Zheltoksan Gogolya_Abylay khan Gogolya,Zheltoksan Tole Bi,Seifulina Gogolya,Zheltoksan Makataeva]1,5,3,3
+41.Zheltoksan Tole Bi_Abylay khan Tole bi,Zheltoksan Kurmangazy,Seifulina Tole bi,Zheltoksan Gogolya]1,9,5,5
+42.Zheltoksan Kurmangazy_Abylay khan Kurmangazy,Zheltoksan Abay,Seifulina Kurmangazy,Zheltoksan Tole Bi]1,1,4,9
+43.Zheltoksan Abay_Abylay Khan Abay,Zheltoksan Kurmangazy,Seifulina Abay]1,1,3
+44.Abylay khan Rayymbek_Nazarbaev Rayymbek,Zheltoksan Rayymbek,Abylay khan Makataeva]4,1,4
+45.Abylay khan Makataeva_Nazarbaev Makataeva,Zheltoksan Makataeva,Abylay khan Rayymbek,Abylay khan Gogolya]4,1,4,3
+46.Abylay khan Gogolya_Nazarbaev Gogolya,Zheltoksan Gogolya,Abylay khan Makataeva,Abylay khan Tole bi]5,1,3,5
+47.Abylay khan Tole bi_Zheltoksan Tole Bi,Abylay khan Gogolya,Abylay khan Kurmangazy,KBTU]1,5,9,1
+48.Abylay khan Kurmangazy_Nazarbaev Kurmangazy,Zheltoksan Kurmangazy,Abylay khan Tole bi,Abylay Khan Abay]4,1,9,1
+49.Abylay Khan Abay_Nazarbaev Abay,Zheltoksan Abay,Abylay khan Kurmangazy]4,1,1
+50!.Nazarbaev Rayymbek_Kunaev Rayymbek,Abylay khan Rayymbek,Nazarbaev Makataeva]2,4,4
+51.Nazarbaev Makataeva_Kunaev Makataeva,Abylay khan Makataeva,Nazarbaev Rayymbek,Nazarbaev Gogolya]2,4,4,3
+52.Nazarbaev Gogolya_Kunaev Gogolya,Abylay khan Gogolya,Nazarbaev Makataeva,Nazarbaev Tole bi]2,4,3,5
+53.Nazarbaev Tole bi_Kunaev Tole bi,Abylay khan Tole bi,Nazarbaev Gogolya,Nazarbaev Kurmangazy]2,4,5,7
+54.Nazarbaev Kurmangazy_Kunaev Kurmangazy,Abylay khan Kurmangazy,Nazarbaev Tole bi,Nazarbaev Abay]2,4,7,2
+55.Nazarbaev Abay_Kunaev Abay,Abylay Khan Abay,Nazarbaev Kurmangazy]2,4,2
+56!.Kunaev Rayymbek_Nazarbaev Rayymbek,Kunaev Makataeva]2,4
+57.Kunaev Makataeva_Nazarbaev Makataeva,Kunaev Rayymbek,Kunaev Gogolya]2,4,3
+58.Kunaev Gogolya_Nazarbaev Gogolya,Kunaev Makataeva,Kunaev Tole bi]2,3,5
+59.Kunaev Tole bi_Nazarbaev Tole bi,Kunaev Gogolya,Kunaev Kurmangazy]2,5,7
+60.Kunaev Kurmangazy_Nazarbaev Kurmangazy,Kunaev Tole bi,Kunaev Abay]2,7,2
+61.Kunaev Abay_Nazarbaev Abay,Kunaev Kurmangazy]2,2
