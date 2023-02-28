@@ -1,13 +1,11 @@
 public class Graph {
     String vertices;
     int edge;
-    String[][] arr;
-    public Graph(String vertices, int edge) {
-        this.vertices = vertices;
-        this.edge = edge;
-        this.arr = arr[][]
+    int arr[][];
+    public Graph(int nodes) {
+
     }
     public void addEdge(String vertices) {
-        arr[][]
+
     }
 }
