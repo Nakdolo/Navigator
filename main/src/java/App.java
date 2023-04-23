@@ -95,7 +95,35 @@ public class App {
             }
         }
         System.out.println("HERE IS THE DISTANCE : "+bf.getOrPut(where,new MyDouble(0)).getValue());
+
         ////////////////////DAISHA\\\\\\\\\\\\\\\\\\\\\\\
+
+
+    }
+    static void sort(LinkedStack<String> names , LinkedStack<Double> values){
+        List<String> namesList = new List<>();
+        List<Double> valuesList= new List<>();
+        int size = names.size();
+        for(int i = 0;i<size;i++){
+            namesList.add(names.get());
+            valuesList.add(values.get());
+        }
+        for(int i = 0 ;i<size-1;i++){
+            for(int j =0;j<size-1;j++){
+                if(valuesList.get(j) >valuesList.get(j+1)){
+                    String tempS = namesList.get(j);
+                    Double tempD = valuesList.get(j);
+                    valuesList.set(j,valuesList.get(j+1));
+                    namesList.set(j,namesList.get(j+1));
+                    valuesList.set(j+1,tempD);
+                    namesList.set(j+1,tempS);
+                }
+            }
+        }
+        for (int i = 0 ;i<size;i++){
+            names.add(namesList.get(i));
+            values.add(valuesList.get(i));
+        }
     }
     static boolean visited(List<String> all,String name){
         for(int i = 0;i<all.size();i++){

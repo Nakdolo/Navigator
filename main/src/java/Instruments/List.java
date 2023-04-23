@@ -23,6 +23,9 @@ public class List <T>{
            list[i]=old[i];
        }
     }
+    public void set(int i , T t){
+        list[i]=t;
+    }
     public T get(int i){
         return list[i];
     }
