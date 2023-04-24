@@ -9,7 +9,7 @@ public class App {
         Hash<String, Node> g = new Hash<>(); // graph
         List<Node> hasMetro = new List<>();
 
-        Scanner scan = new Scanner(new File("C:\\Users\\Acer\\Desktop\\Prep\\Navigator\\main\\src\\resources\\DB.txt"));
+        Scanner scan = new Scanner(new File("C:\\Users\\Lenovo\\ideaProjects\\Navigators\\main\\src\\resources\\DB.txt"));
         String line ;
         String locationName;
         Node cur;
@@ -96,7 +96,8 @@ public class App {
         }
         System.out.println("HERE IS THE DISTANCE : "+bf.getOrPut(where,new MyDouble(0)).getValue());
 
-        ////////////////////DAISHA\\\\\\\\\\\\\\\\\\\\\\\
+        ////////////////////DAISHA\\\\\\\\\\\\\\\\\\\\\\\ dijkstra
+
 
 
     }
