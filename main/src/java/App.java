@@ -65,11 +65,12 @@ public class App {
             }
             System.out.println(i + " "+bf.getOrPut(g.getSs().get(i),new MyDouble(10000000000.0) ).getValue());
         }
+        Node temp ;
 
         ////// THEN THE ACTUAL ALGORITHM STARTS
 
         LinkedStack<String> haveWay ;
-        Node temp ;
+
         for (int i=0;i<g.size();i++){
             System.out.println(g.getGs().get(i).getName()+":");
             for(int j = 0;j<g.getGs().get(i).getNeighbors().size();j++){
@@ -95,9 +96,36 @@ public class App {
             }
         }
         System.out.println("HERE IS THE DISTANCE : "+bf.getOrPut(where,new MyDouble(0)).getValue());
+        System.out.println("\n\n\n\n\n\n");
+        System.out.println("Now Daishas answer ...");
+        ////////////////////DAISHA\\\\\\\\\\\\\\\\\\\\\\\ DOUBLE LINKEDSTACKS INSTEAD OF HASHMAP
+        LinkedStack<String> vertices = new LinkedStack<>();
+        LinkedStack<Double> distances = new LinkedStack<>();
+        vertices.add(from);
+        distances.add(0.);
+        double answer = 0.;
+        String current;
+        List<Node> visited = new List<>() ;
+         ///////WE HAVE A GURENTEE THAT WE CAN GET FROM ANY POINT TO ANY POINT
+        while(vertices.size()!=0){
+            current=vertices.get();
+            if(current.equals(where)){
+                answer=distances.get();
+                break ;
+            }
+            temp = g.getOrPut(current,new Node());
+            visited.add(temp);
+            answer=distances.get();///TEMPERARALLY USING IT AS A DISTANCE HOLDER ;
 
-        ////////////////////DAISHA\\\\\\\\\\\\\\\\\\\\\\\
-
+            for(int i = 0;i<temp.getNeighbors().size();i++){
+               if(!visited.contains(temp.getNeighbors().get(i))){
+                   vertices.add(temp.getNeighbors().get(i).getName());
+                   distances.add(answer + temp.getDistance().get(i));
+               }
+            }
+            sort(vertices,distances);
+        }
+        System.out.println("HERE IS THE DISTANCE : "+answer);
 
     }
     static void sort(LinkedStack<String> names , LinkedStack<Double> values){

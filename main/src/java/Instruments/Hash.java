@@ -1,5 +1,5 @@
 package Instruments;
-
+/////Actually its not a hash its just  a map :(
 public class Hash <S, G>{
     private List<S> Ss ;
     private List<G> Gs ;

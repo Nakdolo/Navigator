@@ -16,6 +16,10 @@ public class List <T>{
         list[ind]=t;
         ind++;
     }
+    public boolean contains(T t){
+        for (int i = 0;i<list.length;i++){if(list[i]==t){ return true; }}
+        return false;
+    }
     void copyAndExpand(){
        T [] old = list;
        list=(T[])new Object[list.length*2];
