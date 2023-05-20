@@ -41,57 +41,64 @@ public class NewApp{
         }
         */
             ///////////////////////////////////BELMAN FORD
-            HashMap<String, Double> bl = new HashMap<>();
-            for (String names : g.keySet()) {
-                if (!names.equals(from)) bl.put(names, Double.MAX_VALUE);
-                else bl.put(names, 0.);
-            }
-            Stack<String> currentOnes;
-            HashSet<String> visited;
-            for (int i = 0; i < g.size() - 1; i++) {
-                currentOnes = new Stack<>();
-                visited = new HashSet<>();
-                currentOnes.add(from);
-                visited.add(from);
-                while (!currentOnes.isEmpty()) {
-                    String current = currentOnes.pop();
-                    Vertice v = g.get(current);
-                    double distanceToCurrent = bl.get(current);
-                    for (String neighbours : v.neighbours.keySet()) {
-                        if (visited.add(neighbours))
-                            currentOnes.add(neighbours);
-                        if (bl.get(neighbours) > distanceToCurrent + v.neighbours.get(neighbours)) {
-                            bl.put(neighbours, distanceToCurrent + v.neighbours.get(neighbours));
-                        }
+            bf(from,where);
+            ///////////////////////////////////DIJKSTRA
+            djks(from,where);
+
+        }
+    }
+    public static void bf(String from, String where){
+
+        HashMap<String, Double> bl = new HashMap<>();
+        for (String names : g.keySet()) {
+            if (!names.equals(from)) bl.put(names, Double.MAX_VALUE);
+            else bl.put(names, 0.);
+        }
+        Stack<String> currentOnes;
+        HashSet<String> visited;
+        for (int i = 0; i < g.size() - 1; i++) {
+            currentOnes = new Stack<>();
+            visited = new HashSet<>();
+            currentOnes.add(from);
+            visited.add(from);
+            while (!currentOnes.isEmpty()) {
+                String current = currentOnes.pop();
+                Vertice v = g.get(current);
+                double distanceToCurrent = bl.get(current);
+                for (String neighbours : v.neighbours.keySet()) {
+                    if (visited.add(neighbours))
+                        currentOnes.add(neighbours);
+                    if (bl.get(neighbours) > distanceToCurrent + v.neighbours.get(neighbours)) {
+                        bl.put(neighbours, distanceToCurrent + v.neighbours.get(neighbours));
                     }
                 }
             }
-            System.out.println(bl.get(where));
-
-            ///////////////////////////////////DIJKSTRA
-            LinkedList<Pack> d = new LinkedList<>();
-            List<String> pp = new ArrayList<>();
-            pp.add(from);
-            d.add(new Pack(0, from, pp ));
-            visited = new HashSet<>();
-            visited.add(from);
-            while (!d.get(0).name.equals(where)) {
-                Vertice cur = g.get(d.get(0).name);
-                for (String n : cur.neighbours.keySet()){
-                    List<String> pptemp = new ArrayList<>(d.get(0).path);
-                    pptemp.add(n);
-                    if (visited.add(n))
-                        d.add(new Pack(cur.neighbours.get(n) + d.get(0).val, n,pptemp));
-                }
-                d.remove(0);
-                Collections.sort(d);
+        }
+        System.out.println(bl.get(where));
+    }
+    public static void djks(String from , String where){
+        LinkedList<Pack> d = new LinkedList<>();
+        List<String> pp = new ArrayList<>();
+        HashSet<String> visited;
+        pp.add(from);
+        d.add(new Pack(0, from, pp ));
+        visited = new HashSet<>();
+        visited.add(from);
+        while (!d.get(0).name.equals(where)) {
+            Vertice cur = g.get(d.get(0).name);
+            for (String n : cur.neighbours.keySet()){
+                List<String> pptemp = new ArrayList<>(d.get(0).path);
+                pptemp.add(n);
+                if (visited.add(n))
+                    d.add(new Pack(cur.neighbours.get(n) + d.get(0).val, n,pptemp));
             }
-            System.out.println(d.get(0).val);
-            System.out.println("");
-            for(String ans : d.get(0).path){
-                System.out.println(ans);
-            }
-
+            d.remove(0);
+            Collections.sort(d);
+        }
+        System.out.println(d.get(0).val);
+        System.out.println("");
+        for(String ans : d.get(0).path){
+            System.out.println(ans);
         }
     }
 }
