@@ -41,13 +41,13 @@ public class NewApp{
         }
         */
             ///////////////////////////////////BELMAN FORD
-            bf(from,where);
+            double bfsAns = bf(from,where);
             ///////////////////////////////////DIJKSTRA
-            djks(from,where);
+            double djksans = djks(from,where);
 
         }
     }
-    public static void bf(String from, String where){
+    public static double bf(String from, String where){
 
         HashMap<String, Double> bl = new HashMap<>();
         for (String names : g.keySet()) {
@@ -74,9 +74,9 @@ public class NewApp{
                 }
             }
         }
-        System.out.println(bl.get(where));
+        return  bl.get(where);
     }
-    public static void djks(String from , String where){
+    public static double djks(String from , String where){
         LinkedList<Pack> d = new LinkedList<>();
         List<String> pp = new ArrayList<>();
         HashSet<String> visited;
@@ -95,11 +95,11 @@ public class NewApp{
             d.remove(0);
             Collections.sort(d);
         }
-        System.out.println(d.get(0).val);
-        System.out.println("");
         for(String ans : d.get(0).path){
             System.out.println(ans);
         }
+
+        return d.get(0).val ;
     }
 }
 class Pack implements Comparable<Pack>{
