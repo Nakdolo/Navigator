@@ -63,7 +63,6 @@ public class App {
             }else{
                 bf.getOrPut(g.getSs().get(i), new MyDouble(10000000000.0)).setValue(0);
             }
-            System.out.println(i + " "+bf.getOrPut(g.getSs().get(i),new MyDouble(10000000000.0) ).getValue());
         }
         Node temp ;
 
@@ -71,33 +70,28 @@ public class App {
 
         LinkedStack<String> haveWay ;
 
-        for (int i=0;i<g.size();i++){
-            System.out.println(g.getGs().get(i).getName()+":");
-            for(int j = 0;j<g.getGs().get(i).getNeighbors().size();j++){
-                System.out.println(g.getGs().get(i).getNeighbors().get(j).getName()+" : "+g.getGs().get(i).getDistance().get(j));
-            }
-            System.out.println("-------------------------");
-        }
         List<String> tempHash;
         for(int i = 0;i<g.size()-1;i++){
             haveWay = new LinkedStack<>();
             haveWay.add(from);
             tempHash=new List<>();
             while(haveWay.size() != 0){
-                temp=g.getOrPut(haveWay.get(),new Node());
+                temp=g.getOrPut(haveWay.get(), new Node() );
                 tempHash.add(temp.getName());
                 for(int j = 0;j<temp.getNeighbors().size();j++){
                     if(!visited(tempHash,temp.getNeighbors().get(j).getName())){
                         if (bf.getOrPut(temp.getNeighbors().get(j).getName(), new MyDouble(0)).getValue() > bf.getOrPut(temp.getName(), new MyDouble(0)).getValue() + temp.getDistance().get(j))
-                            bf.getOrPut(temp.getNeighbors().get(j).getName(), new MyDouble(0)).setValue(bf.getOrPut(temp.getName(), new MyDouble(0)).getValue() + temp.getDistance().get(j));
+                            bf.getOrPut(temp.getNeighbors().get(j).getName(), new MyDouble(0)).setValue(bf.getOrPut(temp.getName(), new MyDouble(0)).getValue() + temp.getDistance().get(j) );
                         haveWay.add(temp.getNeighbors().get(j).getName());
                     }
                 }
             }
         }
+
         System.out.println("HERE IS THE DISTANCE : "+bf.getOrPut(where,new MyDouble(0)).getValue());
         System.out.println("\n\n\n\n\n\n");
         System.out.println("Now Daishas answer ...");
+
         ////////////////////DAISHA\\\\\\\\\\\\\\\\\\\\\\\ DOUBLE LINKEDSTACKS INSTEAD OF HASHMAP
         LinkedStack<String> vertices = new LinkedStack<>();
         LinkedStack<Double> distances = new LinkedStack<>();
@@ -106,7 +100,7 @@ public class App {
         double answer = 0.;
         String current;
         List<Node> visited = new List<>() ;
-         ///////WE HAVE A GURENTEE THAT WE CAN GET FROM ANY POINT TO ANY POINT
+         ///////WE HAVE A GURAENTEE THAT WE CAN GET FROM ANY POINT TO ANY POINT
         while(vertices.size()!=0){
             current=vertices.get();
             if(current.equals(where)){
